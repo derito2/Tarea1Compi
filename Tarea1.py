@@ -9,17 +9,17 @@ class Stack:
         self._data: List[Any] = []
 
     def push(self, item):
-        """Insertar elemento"""
+        #Insertar elemento
         self._data.append(item)
 
     def pop(self):
-        """Eliminar y retornar"""
+        #Eliminar y retornar
         if self.is_empty():
             raise IndexError("Stack vacio")
         return self._data.pop()
 
     def peek(self):
-        """Ver el maximo sin eliminar"""
+        #Ver el maximo sin eliminar
         if self.is_empty():
             raise IndexError("Stack vacio")
         return self._data[-1]
@@ -33,23 +33,23 @@ class Stack:
     def __repr__(self):
         return f"Stack({self._data})"
     
-    
+
 class Queue:
     def __init__(self):
         self._data = deque()
 
     def enqueue(self, item):
-        """Insertar al final"""
+        #Insertar al final
         self._data.append(item)
 
     def dequeue(self):
-        """Eliminar del frente"""
+        #Eliminar del frente
         if self.is_empty():
             raise IndexError("Queue vacia")
         return self._data.popleft()
 
     def peek(self):
-        """Ver el frente"""
+        #Ver el frente
         if self.is_empty():
             raise IndexError("Queue vacia")
         return self._data[0]
@@ -69,17 +69,17 @@ class OrderedHashTable:
         self._data = OrderedDict()
 
     def put(self, key, value):
-        """Insertar o actualizar"""
+        #Insertar o actualizar
         self._data[key] = value
 
     def get(self, key):
-        """Obtener valor"""
+        #Obtener valor
         if key not in self._data:
             raise KeyError(f"Clave {key} no encontrada")
         return self._data[key]
 
     def remove(self, key):
-        """Eliminar elemento"""
+        #Eliminar elemento
         if key not in self._data:
             raise KeyError(f"Clave {key} no encontrada")
         del self._data[key]
