@@ -2,7 +2,7 @@
 
 from typing import List, Any
 from collections import deque
-
+from collections import OrderedDict
 
 class Stack:
     def __init__(self):
@@ -63,3 +63,47 @@ class Queue:
 
     def __repr__(self):
         return f"Queue({list(self._data)})"
+    
+
+
+
+class OrderedHashTable:
+    def __init__(self):
+        self._data = OrderedDict()
+
+    def put(self, key, value):
+        """Insertar o actualizar"""
+        self._data[key] = value
+
+    def get(self, key):
+        """Obtener valor"""
+        if key not in self._data:
+            raise KeyError(f"Clave {key} no encontrada")
+        return self._data[key]
+
+    def remove(self, key):
+        """Eliminar elemento"""
+        if key not in self._data:
+            raise KeyError(f"Clave {key} no encontrada")
+        del self._data[key]
+
+    def contains(self, key):
+        return key in self._data
+
+    def keys(self):
+        return list(self._data.keys())
+
+    def values(self):
+        return list(self._data.values())
+
+    def items(self):
+        return list(self._data.items())
+
+    def size(self):
+        return len(self._data)
+
+    def is_empty(self):
+        return len(self._data) == 0
+
+    def __repr__(self):
+        return f"OrderedHashTable({self._data})"
