@@ -107,3 +107,22 @@ class OrderedHashTable:
 
     def __repr__(self):
         return f"OrderedHashTable({self._data})"
+    
+
+# STACK
+s = Stack()
+s.push(10)
+s.push(20)
+print(s.pop())  
+
+# QUEUE
+q = Queue()
+q.enqueue(1)
+q.enqueue(2)
+print(q.dequeue())  
+
+# HASH TABLE
+h = OrderedHashTable()
+h.put("a", 100)
+h.put("b", 200)
+print(h.get("a"))  
